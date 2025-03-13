@@ -7,6 +7,26 @@
       "types": "./v1.d.ts",
       "require": "./v1.js",
       "import": "./v1.mjs"
+    },
+    "./payloads": {
+      "types": "./payloads/index.d.ts",
+      "require": "./payloads/index.js",
+      "import": "./payloads/index.mjs"
+    },
+    "./payloads/v*": {
+      "types": "./payloads/v*/index.d.ts",
+      "require": "./payloads/v*/index.js",
+      "import": "./payloads/v*/index.mjs"
+    },
+    "./rest": {
+      "types": "./rest/index.d.ts",
+      "require": "./rest/index.js",
+      "import": "./rest/index.mjs"
+    },
+    "./rest/v*": {
+      "types": "./rest/v*/index.d.ts",
+      "require": "./rest/v*/index.js",
+      "import": "./rest/v*/index.mjs"
     }
   },
   "scripts": {
