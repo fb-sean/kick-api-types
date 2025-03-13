@@ -3,6 +3,8 @@ export * from './categories';
 
 export const APIVersion = 'v1';
 
+export const APIBasePath = `/public/${APIVersion}`;
+
 export const Routes = {
     /**
      * Route for:
@@ -71,4 +73,30 @@ export const Routes = {
     Channels() {
         return `/channels` as const;
     },
+
+    /**
+     * Route for:
+     * - POST `/chat`
+     */
+    Chat() {
+        return `/chat` as const;
+    },
+
+    /**
+     * Route for:
+     * - GET `/public-key`
+     */
+    PublicKey() {
+        return `/public-key` as const;
+    },
+
+    /**
+     * Route for:
+     * - GET `/events/subscriptions`
+     * - POST `/events/subscriptions`
+     * - DELETE `/events/subscriptions`
+     */
+    EventsSubscriptions() {
+        return `/events/subscriptions` as const;
+    }
 }
