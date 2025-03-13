@@ -1,0 +1,29 @@
+{
+  "name": "kick-api-types",
+  "version": "1.0.0",
+  "description": "Kick.com API Types",
+  "exports": {
+    "./v1": {
+      "types": "./v1.d.ts",
+      "require": "./v1.js",
+      "import": "./v1.mjs"
+    }
+  },
+  "scripts": {
+    "build": "tsc && run-p esm:*"
+  },
+  "keywords": [
+    "kick",
+    "api",
+    "types"
+  ],
+  "author": "Sean Sattler <sean@sattler.dev>",
+  "license": "MIT",
+  "files": [
+    "{rest}/**/*.{js,js.map,d.ts,d.ts.map,mjs}"
+  ],
+  "devDependencies": {
+    "@types/node": "^22.13.10",
+    "typescript": "^5.8.2"
+  }
+}
