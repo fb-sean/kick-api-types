@@ -1,6 +1,6 @@
 {
   "name": "kick-api-types",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Kick.com API Types",
   "exports": {
     "./v1": {
