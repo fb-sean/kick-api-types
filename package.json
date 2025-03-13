@@ -1,6 +1,6 @@
 {
   "name": "kick-api-types",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Kick.com API Types",
   "exports": {
     "./v1": {
@@ -40,11 +40,14 @@
   "author": "Sean Sattler <sean@sattler.dev>",
   "license": "MIT",
   "files": [
-    "{rest}/**/*.{js,js.map,d.ts,d.ts.map,mjs}"
+    "{rest,payloads}/**/*.{js,js.map,d.ts,d.ts.map,mjs}"
   ],
   "repository": {
     "type": "git",
     "url": "https://github.com/fb-sean/kick-api-types"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "devDependencies": {
     "@types/node": "^22.13.10",
