@@ -1,56 +1,60 @@
 {
-  "name": "kick-api-types",
-  "version": "1.0.3",
-  "description": "Kick.com API Types",
-  "exports": {
-    "./v1": {
-      "types": "./v1.d.ts",
-      "require": "./v1.js",
-      "import": "./v1.mjs"
+    "name": "kick-api-types",
+    "version": "1.0.3",
+    "description": "Kick.com API Types",
+    "author": "Sean Sattler <sean@sattler.dev>",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/fb-sean/kick-api-types"
     },
-    "./payloads": {
-      "types": "./payloads/index.d.ts",
-      "require": "./payloads/index.js",
-      "import": "./payloads/index.mjs"
+    "keywords": [
+        "kick",
+        "api",
+        "types"
+    ],
+    "exports": {
+        "./v1": {
+            "types": "./v1.d.ts",
+            "import": "./v1.mjs",
+            "require": "./v1.js"
+        },
+        "./payloads": {
+            "types": "./payloads/index.d.ts",
+            "import": "./payloads/index.mjs",
+            "require": "./payloads/index.js"
+        },
+        "./payloads/v*": {
+            "types": "./payloads/v*/index.d.ts",
+            "import": "./payloads/v*/index.mjs",
+            "require": "./payloads/v*/index.js"
+        },
+        "./rest": {
+            "types": "./rest/index.d.ts",
+            "import": "./rest/index.mjs",
+            "require": "./rest/index.js"
+        },
+        "./rest/v*": {
+            "types": "./rest/v*/index.d.ts",
+            "import": "./rest/v*/index.mjs",
+            "require": "./rest/v*/index.js"
+        }
     },
-    "./payloads/v*": {
-      "types": "./payloads/v*/index.d.ts",
-      "require": "./payloads/v*/index.js",
-      "import": "./payloads/v*/index.mjs"
+    "files": [
+        "{rest,payloads}/**/*.{js,js.map,d.ts,d.ts.map,mjs}"
+    ],
+    "scripts": {
+        "build": "tsc",
+        "lint": "eslint",
+        "lint:fix": "eslint --fix"
     },
-    "./rest": {
-      "types": "./rest/index.d.ts",
-      "require": "./rest/index.js",
-      "import": "./rest/index.mjs"
+    "publishConfig": {
+        "access": "public"
     },
-    "./rest/v*": {
-      "types": "./rest/v*/index.d.ts",
-      "require": "./rest/v*/index.js",
-      "import": "./rest/v*/index.mjs"
+    "devDependencies": {
+        "@antfu/eslint-config": "^4.13.2",
+        "@types/node": "^22.13.10",
+        "eslint": "^9.28.0",
+        "typescript": "^5.8.2"
     }
-  },
-  "scripts": {
-    "build": "tsc"
-  },
-  "keywords": [
-    "kick",
-    "api",
-    "types"
-  ],
-  "author": "Sean Sattler <sean@sattler.dev>",
-  "license": "MIT",
-  "files": [
-    "{rest,payloads}/**/*.{js,js.map,d.ts,d.ts.map,mjs}"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/fb-sean/kick-api-types"
-  },
-  "publishConfig": {
-    "access": "public"
-  },
-  "devDependencies": {
-    "@types/node": "^22.13.10",
-    "typescript": "^5.8.2"
-  }
 }
