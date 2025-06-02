@@ -17,3 +17,5 @@ export interface Channel {
     };
     stream_title: string;
 }
+
+export type Channels = Channel[];
