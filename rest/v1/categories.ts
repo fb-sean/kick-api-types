@@ -1,5 +1,5 @@
 import type {Category, Categrories} from '../../payloads';
-import type {RESTError, RESTResponse} from './global';
+import type {RESTError, RESTResult} from './global';
 
 /**
  * @see {@link https://docs.kick.com/apis/categories#get-categories}
@@ -19,7 +19,7 @@ export interface RESTGetCategoriesQuery {
 /**
  * @see {@link https://docs.kick.com/apis/categories#get-categories}
  */
-export type RESTGetCategoriesResult = RESTResponse<Categrories>;
+export type RESTGetCategoriesResult = RESTResult<Categrories>;
 
 /**
  * @see {@link https://docs.kick.com/apis/categories#get-categories}
@@ -36,4 +36,4 @@ export interface RESTGetCategoryQuery {
 /**
  * @see {@link https://docs.kick.com/apis/categories#get-categories-category_id}
  */
-export type RESTGetCategoryResult = RESTResponse<Category>;
+export type RESTGetCategoryResult = RESTResult<Category>;

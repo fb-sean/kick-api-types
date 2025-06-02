@@ -3,7 +3,7 @@ export interface RESTError {
     message: string;
 }
 
-export interface RESTResponse<T> {
+export interface RESTResult<T> {
     data: T;
     message: string;
 }
