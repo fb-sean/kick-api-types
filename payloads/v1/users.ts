@@ -12,3 +12,5 @@ export interface User {
     profile_picture: string;
     user_id: number;
 }
+
+export type Users = User[];

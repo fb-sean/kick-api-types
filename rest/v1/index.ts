@@ -1,5 +1,5 @@
-export * from './oauth2';
 export * from './categories';
+export * from './oauth2';
 
 export const APIVersion = 'v1';
 
@@ -98,5 +98,5 @@ export const Routes = {
      */
     EventsSubscriptions() {
         return `/events/subscriptions` as const;
-    }
-}
+    },
+};

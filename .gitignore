@@ -16,3 +16,4 @@ rest/**/*.d.ts
 rest/**/*.mjs
 
 package-lock.json
+bun.lock
