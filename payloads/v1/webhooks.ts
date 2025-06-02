@@ -1,4 +1,4 @@
-import type {Emote} from "./emote";
+import type {Emote} from './emote';
 
 export interface WebhookUser {
     is_anonymous: boolean;
@@ -10,8 +10,8 @@ export interface WebhookUser {
 }
 
 export interface ChatMessageEvent {
-    eventType: "chat.message.sent";
-    eventVersion: "1";
+    eventType: 'chat.message.sent';
+    eventVersion: '1';
     message_id: string;
     broadcaster: WebhookUser;
     sender: WebhookUser;
@@ -20,15 +20,15 @@ export interface ChatMessageEvent {
 }
 
 export interface ChannelFollowEvent {
-    eventType: "channel.followed";
-    eventVersion: "1";
+    eventType: 'channel.followed';
+    eventVersion: '1';
     broadcaster: WebhookUser;
     follower: WebhookUser;
 }
 
 export interface SubscriptionRenewalEvent {
-    eventType: "channel.subscription.renewal";
-    eventVersion: "1";
+    eventType: 'channel.subscription.renewal';
+    eventVersion: '1';
     broadcaster: WebhookUser;
     subscriber: WebhookUser;
     duration: number;
@@ -36,8 +36,8 @@ export interface SubscriptionRenewalEvent {
 }
 
 export interface SubscriptionGiftEvent {
-    eventType: "channel.subscription.gifts";
-    eventVersion: "1";
+    eventType: 'channel.subscription.gifts';
+    eventVersion: '1';
     broadcaster: WebhookUser;
     gifter: WebhookUser;
     giftees: WebhookUser[];
@@ -45,8 +45,8 @@ export interface SubscriptionGiftEvent {
 }
 
 export interface NewSubscriptionEvent {
-    eventType: "channel.subscription.new";
-    eventVersion: "1";
+    eventType: 'channel.subscription.new';
+    eventVersion: '1';
     broadcaster: WebhookUser;
     subscriber: WebhookUser;
     duration: number;
@@ -54,8 +54,8 @@ export interface NewSubscriptionEvent {
 }
 
 export interface LivestreamStatusUpdatedEvent {
-    eventType: "livestream.status.updated";
-    eventVersion: "1";
+    eventType: 'livestream.status.updated';
+    eventVersion: '1';
     broadcaster: WebhookUser;
     is_live: boolean;
     title: string;

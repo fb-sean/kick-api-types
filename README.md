@@ -44,4 +44,3 @@ This project is licensed under the **MIT License**. By contributing, you agree t
 ---
 
 Join us in making **Kick API development smoother for everyone!** 🚀
-
