@@ -1,5 +1,12 @@
 export * from './categories';
+export * from './channels';
+export * from './chat';
+export * from './global';
+export * from './livestreams';
+export * from './moderation';
 export * from './oauth2';
+export * from './public-key';
+export * from './users';
 
 export const APIVersion = 'v1';
 
