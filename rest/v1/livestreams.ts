@@ -1,4 +1,4 @@
-import type {Livestreams} from '../../payloads/v1/livestream';
+import type {Livestreams} from '../../payloads';
 import type {RESTResult} from './global';
 
 /**

@@ -1,4 +1,4 @@
-export * from './v1/index';
+export * from './v1';
 
 export const APIUrl = 'https://api.kick.com';
 
