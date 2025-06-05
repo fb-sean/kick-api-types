@@ -1,6 +1,6 @@
 {
     "name": "kick-api-types",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "description": "Kick.com API Types",
     "author": "Sean Sattler <sean@sattler.dev>",
     "license": "MIT",
