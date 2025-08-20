@@ -9,14 +9,37 @@ export interface WebhookUser {
     channel_slug?: string;
 }
 
+export interface WebhookBadge {
+    text: string;
+    type: string;
+    count?: number;
+}
+
+export interface WebhookIdentity {
+    username_color: string;
+    badges: WebhookBadge[];
+}
+
+export interface WebhookUserWithIdentity extends WebhookUser {
+    identity: WebhookIdentity;
+}
+
+export interface WebhookRepliesTo {
+    message_id: string;
+    content: string;
+    sender: WebhookUser;
+}
+
 export interface ChatMessageEvent {
     eventType: 'chat.message.sent';
     eventVersion: '1';
     message_id: string;
+    replies_to: WebhookRepliesTo;
     broadcaster: WebhookUser;
-    sender: WebhookUser;
+    sender: WebhookUserWithIdentity;
     content: string;
     emotes: Emote[];
+    created_at: string;
 }
 
 export interface ChannelFollowEvent {
@@ -61,4 +84,19 @@ export interface LivestreamStatusUpdatedEvent {
     title: string;
     started_at: string;
     ended_at?: string | null;
+}
+
+export interface ModerationBannedEventMetadata {
+    reason: string;
+    created_at: string;
+    expires_at: string;
+}
+
+export interface ModerationBannedEvent {
+    eventType: 'moderation.banned';
+    eventVersion: '1';
+    broadcaster: WebhookUser;
+    moderator: WebhookUser;
+    banned_user: WebhookUser;
+    metadata: ModerationBannedEventMetadata;
 }

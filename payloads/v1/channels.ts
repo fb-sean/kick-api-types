@@ -12,6 +12,7 @@ export interface Channel {
         key: string;
         language: string;
         start_time: string;
+        thumbnail: string;
         url: string;
         viewer_count: number;
     };
