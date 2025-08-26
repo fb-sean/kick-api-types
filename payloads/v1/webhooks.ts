@@ -56,6 +56,7 @@ export interface SubscriptionRenewalEvent {
     subscriber: WebhookUser;
     duration: number;
     created_at: string;
+    expires_at: string;
 }
 
 export interface SubscriptionGiftEvent {
@@ -65,6 +66,7 @@ export interface SubscriptionGiftEvent {
     gifter: WebhookUser;
     giftees: WebhookUser[];
     created_at: string;
+    expires_at: string;
 }
 
 export interface NewSubscriptionEvent {
@@ -74,6 +76,7 @@ export interface NewSubscriptionEvent {
     subscriber: WebhookUser;
     duration: number;
     created_at: string;
+    expires_at: string;
 }
 
 export interface LivestreamStatusUpdatedEvent {
