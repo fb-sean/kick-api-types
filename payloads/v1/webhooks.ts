@@ -1,18 +1,21 @@
 import type {Emote} from './emote';
 
-export interface WebhookUser {
+export interface WebhookUser extends WebhookBaseUser {
     is_anonymous: boolean;
-    user_id?: number;
-    username?: string;
-    is_verified?: boolean;
-    profile_picture?: string;
-    channel_slug?: string;
 }
 
 export interface WebhookBadge {
     text: string;
     type: string;
     count?: number;
+}
+
+export interface WebhookBaseUser {
+    user_id?: number;
+    username?: string;
+    is_verified?: boolean;
+    profile_picture?: string;
+    channel_slug?: string;
 }
 
 export interface WebhookIdentity {
@@ -22,6 +25,11 @@ export interface WebhookIdentity {
 
 export interface WebhookUserWithIdentity extends WebhookUser {
     identity: WebhookIdentity;
+}
+
+export interface KicksGiftedWebhookUser extends WebhookBaseUser {
+    // This type is used specifically for kicks.gifted events where Kick's API
+    // does not provide the is_anonymous field that other webhook events have
 }
 
 export interface WebhookRepliesTo {
@@ -102,4 +110,19 @@ export interface ModerationBannedEvent {
     moderator: WebhookUser;
     banned_user: WebhookUser;
     metadata: ModerationBannedEventMetadata;
+}
+
+export interface KicksGiftedEvent {
+    eventType: 'kicks.gifted';
+    eventVersion: '1';
+    broadcaster: KicksGiftedWebhookUser;
+    sender: KicksGiftedWebhookUser;
+    gift: {
+        amount: number;
+        name: string;
+        type: string;
+        tier: string;
+        message: string;
+    };
+    created_at: string;
 }
