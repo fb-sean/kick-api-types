@@ -1,5 +1,11 @@
 import type {Emote} from './emote';
 
+/**
+ * Represents a user in the context of most of Kick's webhook events,
+ * specifically those that include the is_anonymous field.
+ *
+ * @see WebhookBaseUser
+ */
 export interface WebhookUser extends WebhookBaseUser {
     is_anonymous: boolean;
 }
@@ -27,10 +33,13 @@ export interface WebhookUserWithIdentity extends WebhookUser {
     identity: WebhookIdentity;
 }
 
-export interface KicksGiftedWebhookUser extends WebhookBaseUser {
-    // This type is used specifically for kicks.gifted events where Kick's API
-    // does not provide the is_anonymous field that other webhook events have
-}
+/**
+ * Represents a user in the context of a "kicks gifted" webhook event. Kick's
+ * API does not provide the is_anonymous field that other webhook events have.
+ *
+ * @see WebhookBaseUser
+ */
+export interface KicksGiftedWebhookUser extends WebhookBaseUser {}
 
 export interface WebhookRepliesTo {
     message_id: string;
