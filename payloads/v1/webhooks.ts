@@ -96,6 +96,29 @@ export interface NewSubscriptionEvent {
     expires_at: string;
 }
 
+export interface LivestreamMetadataUpdatedEvent {
+    eventType: 'livestream.metadata.updated';
+    eventVersion: '1';
+    broadcaster: WebhookUser;
+    metadata: {
+        title: string;
+        language: string;
+        has_mature_content: boolean;
+        // category and Category are due to https://github.com/KickEngineering/KickDevDocs/issues/238
+        // Consolidate to required 'category' field when fixed
+        category?: {
+            id: number;
+            name: string;
+            thumbnail: string;
+        };
+        Category?: {
+            id: number;
+            name: string;
+            thumbnail: string;
+        };
+    };
+}
+
 export interface LivestreamStatusUpdatedEvent {
     eventType: 'livestream.status.updated';
     eventVersion: '1';
