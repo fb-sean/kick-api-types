@@ -1,18 +1,27 @@
 import type {Emote} from './emote';
 
-export interface WebhookUser {
+/**
+ * Represents a user in the context of most of Kick's webhook events,
+ * specifically those that include the is_anonymous field.
+ *
+ * @see WebhookBaseUser
+ */
+export interface WebhookUser extends WebhookBaseUser {
     is_anonymous: boolean;
-    user_id?: number;
-    username?: string;
-    is_verified?: boolean;
-    profile_picture?: string;
-    channel_slug?: string;
 }
 
 export interface WebhookBadge {
     text: string;
     type: string;
     count?: number;
+}
+
+export interface WebhookBaseUser {
+    user_id?: number;
+    username?: string;
+    is_verified?: boolean;
+    profile_picture?: string;
+    channel_slug?: string;
 }
 
 export interface WebhookIdentity {
@@ -23,6 +32,14 @@ export interface WebhookIdentity {
 export interface WebhookUserWithIdentity extends WebhookUser {
     identity: WebhookIdentity;
 }
+
+/**
+ * Represents a user in the context of a "kicks gifted" webhook event. Kick's
+ * API does not provide the is_anonymous field that other webhook events have.
+ *
+ * @see WebhookBaseUser
+ */
+export interface KicksGiftedWebhookUser extends WebhookBaseUser {}
 
 export interface WebhookRepliesTo {
     message_id: string;
@@ -102,4 +119,19 @@ export interface ModerationBannedEvent {
     moderator: WebhookUser;
     banned_user: WebhookUser;
     metadata: ModerationBannedEventMetadata;
+}
+
+export interface KicksGiftedEvent {
+    eventType: 'kicks.gifted';
+    eventVersion: '1';
+    broadcaster: KicksGiftedWebhookUser;
+    sender: KicksGiftedWebhookUser;
+    gift: {
+        amount: number;
+        name: string;
+        type: string;
+        tier: string;
+        message: string;
+    };
+    created_at: string;
 }
