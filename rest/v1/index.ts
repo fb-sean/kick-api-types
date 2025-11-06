@@ -1,6 +1,7 @@
 export * from './categories';
 export * from './channels';
 export * from './chat';
+export * from './events';
 export * from './global';
 export * from './livestreams';
 export * from './moderation';
