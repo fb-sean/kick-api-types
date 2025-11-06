@@ -11,7 +11,8 @@ export type EventNames =
     'channel.subscription.new' |
     'livestream.status.updated' |
     'livestream.metadata.updated' |
-    'moderation.banned';
+    'moderation.banned' |
+    'kicks.gifted';
 
 export interface EventSubscription {
     app_id: string;
