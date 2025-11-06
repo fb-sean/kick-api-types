@@ -29,7 +29,7 @@ export interface RESTPostEventSubscriptionsBody {
         /**
          * The version of the event
          */
-        version: string;
+        version: number;
     }>;
 
     /**
