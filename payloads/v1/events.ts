@@ -156,6 +156,8 @@ export interface LivestreamMetadataUpdatedEvent {
             name: string;
             thumbnail: string;
         };
+        // 'Category' (capitalized) is not included here as it's deprecated
+        // See https://github.com/KickEngineering/KickDevDocs/issues/238
     };
 }
 
