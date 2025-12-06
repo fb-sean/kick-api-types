@@ -3,16 +3,16 @@ import type {Emote} from './emote';
 /**
  * @see {@link https://docs.kick.com/events/event-types}
  */
-export type EventNames =
-    'chat.message.sent' |
-    'channel.followed' |
-    'channel.subscription.renewal' |
-    'channel.subscription.gifts' |
-    'channel.subscription.new' |
-    'livestream.status.updated' |
-    'livestream.metadata.updated' |
-    'moderation.banned' |
-    'kicks.gifted';
+export type EventNames
+    = 'chat.message.sent'
+        | 'channel.followed'
+        | 'channel.subscription.renewal'
+        | 'channel.subscription.gifts'
+        | 'channel.subscription.new'
+        | 'livestream.status.updated'
+        | 'livestream.metadata.updated'
+        | 'moderation.banned'
+        | 'kicks.gifted';
 
 export interface EventSubscription {
     app_id: string;
@@ -141,6 +141,22 @@ export interface LivestreamStatusUpdatedEvent {
     title: string;
     started_at: string;
     ended_at?: string | null;
+}
+
+export interface LivestreamMetadataUpdatedEvent {
+    eventType: 'livestream.metadata.updated';
+    eventVersion: '1';
+    broadcaster: EventUser;
+    metadata: {
+        title: string;
+        language: string;
+        has_mature_content: boolean;
+        category: {
+            id: number;
+            name: string;
+            thumbnail: string;
+        };
+    };
 }
 
 export interface ModerationBannedEventMetadata {
