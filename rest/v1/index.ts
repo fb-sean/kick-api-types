@@ -7,6 +7,7 @@ export * from './livestreams';
 export * from './moderation';
 export * from './oauth2';
 export * from './public-key';
+export * from './rewards';
 export * from './users';
 
 export const APIVersion = 'v1';
@@ -106,5 +107,23 @@ export const Routes = {
      */
     EventsSubscriptions() {
         return `/events/subscriptions` as const;
+    },
+
+    /**
+     * Route for:
+     * - GET `/channels/rewards`
+     * - POST `/channels/rewards`
+     */
+    ChannelsRewards() {
+        return `/channels/rewards` as const;
+    },
+
+    /**
+     * Route for:
+     * - PATCH `/channels/rewards/{id}`
+     * - DELETE `/channels/rewards/{id}`
+     */
+    ChannelsReward(id: string) {
+        return `/channels/rewards/${id}` as const;
     },
 };
