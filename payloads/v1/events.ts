@@ -157,6 +157,24 @@ export interface LivestreamStatusUpdatedEvent {
     ended_at?: string | null;
 }
 
+export interface LivestreamMetadataUpdatedEvent {
+    eventType: 'livestream.metadata.updated';
+    eventVersion: '1';
+    broadcaster: EventUser;
+    metadata: {
+        title: string;
+        language: string;
+        has_mature_content: boolean;
+        category: {
+            id: number;
+            name: string;
+            thumbnail: string;
+        };
+        // 'Category' (capitalized) is not included here as it's deprecated
+        // See https://github.com/KickEngineering/KickDevDocs/issues/238
+    };
+}
+
 export interface ModerationBannedEventMetadata {
     reason: string;
     created_at: string;
