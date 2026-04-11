@@ -1,4 +1,5 @@
 import type {Emote} from './emote';
+import type {EventChannelReward} from './rewards';
 
 /**
  * @see {@link https://docs.kick.com/events/event-types}
@@ -9,6 +10,7 @@ export type EventNames
         | 'channel.subscription.renewal'
         | 'channel.subscription.gifts'
         | 'channel.subscription.new'
+        | 'channel.reward.redemption.updated'
         | 'livestream.status.updated'
         | 'livestream.metadata.updated'
         | 'moderation.banned'
@@ -131,6 +133,18 @@ export interface NewSubscriptionEvent {
     duration: number;
     created_at: string;
     expires_at: string;
+}
+
+export interface ChannelRewardRedemptionEvent {
+    eventType: 'channel.reward.redemption.updated';
+    eventVersion: '1';
+    id: string;
+    user_input: string;
+    status: 'pending' | 'accepted' | 'rejected';
+    redeemed_at: string;
+    reward: EventChannelReward;
+    redeemer: EventBaseUser;
+    broadcaster: EventBaseUser;
 }
 
 export interface LivestreamStatusUpdatedEvent {
